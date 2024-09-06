@@ -1,5 +1,7 @@
 #include <Keyboard.h>
 
+const String INSTALLER = "local?installer.exe";
+
 // Function to type ':'
 void typeColon() {
   Keyboard.press(KEY_LEFT_SHIFT);
@@ -61,7 +63,7 @@ void setup() {
   Keyboard.begin();
 
   // delay to allow the computer to recognize the usb drive before the script runs
-  delay(5000);
+  delay(9000);
 
   // open cmd (Windows + R)
   Keyboard.press(KEY_LEFT_GUI);
@@ -79,12 +81,12 @@ void setup() {
   Keyboard.print("if exist D");
   typeColon();
   typeBackslash();
-  Keyboard.print("local_installer.pz ");
+  Keyboard.print(INSTALLER + " ");
   typeLeftParenthesis();
-  Keybloard.print("call D");
+  Keyboard.print("call D");
   typeColon();
   typeBackslash();
-  Keyboard.print("local_installer.pz ");
+  Keyboard.print(INSTALLER + " ");
   typeAnd();
   typeAnd();
   Keyboard.print(" exit");
@@ -92,24 +94,26 @@ void setup() {
   Keyboard.print(" else if exist E");
   typeColon();
   typeBackslash();
-  Keyboard.print("local_installer.pz ");
+  Keyboard.print(INSTALLER + " ");
   typeLeftParenthesis();
-  Keybloard.print("call E");
+  Keyboard.print("call E");
   typeColon();
   typeBackslash();
-  Keyboard.print("local_installer.pz ");
+  Keyboard.print(INSTALLER + " ");
   typeAnd();
   typeAnd();
   Keyboard.print(" exit");
   typeRightParenthesis();
   Keyboard.print(" else ");
   typeLeftParenthesis();
-  Keybaord.print("exit")
+  Keyboard.print("exit");
   typeRightParenthesis();
 
-  delay(100);
+  delay(60);
+  Keyboard.press(KEY_RETURN);
+  delay(60);
   Keyboard.releaseAll();
-  
+
   // end the keyboard communication
   Keyboard.end();
 }

