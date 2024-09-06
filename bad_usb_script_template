@@ -1,0 +1,24 @@
+
+SCRIPT:
+
+[windows key]
+
+[r key]
+
+[release all]
+
+[type
+    cmd
+]
+
+[enter key]
+
+[release all]
+
+[type
+    if exist D:\local_installer.py (call D:\local_installer.py && exit) else if exist E:\local_installer.py (call E:\local_installer.py && exit) else (exit)
+]
+
+[enter key]
+
+[release all]
