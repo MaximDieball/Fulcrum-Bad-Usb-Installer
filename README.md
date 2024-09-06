@@ -29,7 +29,7 @@ The Fulcrum-Bad-Usb-Installer is a device built using an Arduino Leonardo, a USB
 1. Connect the Arduino Leonardo to the USB splitter using a micro USB to USB-A cable.
 2. Connect the USB stick to the USB splitter.
 
-<img src="[link-to-your-image](https://github.com/user-attachments/assets/e6360389-cb6b-4133-b109-cba060e8c018)" alt="Assembly Image" width="500">
+![bad usb (1)](https://github.com/user-attachments/assets/f0ef3ab7-2ebe-4bfb-9fb9-3ee8f641d5a0)
 
 ## Infecting a Windows Computer
 
