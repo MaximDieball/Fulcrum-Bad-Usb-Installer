@@ -1,4 +1,4 @@
-# Fulcrum-Bad-Usb-Installer-Device
+# Fulcrum-Bad-Usb-Installer
 
 The Fulcrum-Bad-Usb-Installer is a device built using an Arduino Leonardo, a USB stick, and a USB splitter. It is used to install the Fulcrum beacon simply by plugging it into a USB slot on a Windows computer. Acting as a "bad USB," the device runs a new installer file `local_installer.py` from the USB stick, which installs the Fulcrum beacon without needing an internet connection.
 
